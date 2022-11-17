@@ -1,7 +1,9 @@
-navidrome_host     = 'localhost'                # your Navidrome instance IP or FQDN
-navidrome_port     = '4533'                     # your Navidrome port (set 443 if you're doing HTTPS over a reverse proxy)
-navidrome_scheme   = 'https'                    # http or https
-navidrome_username = 'morveus'                  # your Navidrome username (case-sensitive!)
-navidrome_password = ''                         # your Navidrome password
-source_folder      = '/nas/Music/Albums'        # your source folder (where your Navidrome library is stored)
-destination_folder = '/nas/Syncthing/FiiO'      # your target folder
+navidrome_host          = 'localhost'                # your Navidrome instance IP or FQDN
+navidrome_port          = '4533'                     # your Navidrome port (set 443 if you're doing HTTPS over a reverse proxy)
+navidrome_scheme        = 'https'                    # http or https
+navidrome_username      = 'morveus'                  # your Navidrome username (case-sensitive!)
+navidrome_password      = ''                         # your Navidrome password
+source_folder           = '/nas/Music/Albums'        # your source folder (where your Navidrome library is stored)
+destination_folder      = '/nas/Syncthing/FiiO'      # your target folder
+mount_folder            = '/music'                   # your Navidrome music folder
+single_tracks_folder    = 'Singles'                  # your single starred tracks folder (will be "destination_folder / single_tracks_folder")
