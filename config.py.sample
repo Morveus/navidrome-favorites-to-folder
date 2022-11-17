@@ -1,0 +1,3 @@
+navidrome_username = 'Morveus'                  # your Navidrome username
+navidrome_password = ''                         # your navidrome password
+destination_folder = '/nas/syncthings/FiiO'     # your target folder
