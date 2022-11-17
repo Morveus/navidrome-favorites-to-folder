@@ -1,3 +1,6 @@
+navidrome_host     = 'localhost'                # your Navidrome instance IP or FQDN
+navidrome_port     = '4533'                     # your Navidrome port (set 443 if you're doing HTTPS over a reverse proxy)
+navidrome_scheme   = 'https'                    # http or https
 navidrome_username = 'Morveus'                  # your Navidrome username
-navidrome_password = ''                         # your navidrome password
-destination_folder = '/nas/syncthings/FiiO'     # your target folder
+navidrome_password = ''                         # your Navidrome password
+destination_folder = '/nas/syncthing/FiiO'      # your target folder
