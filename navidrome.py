@@ -1,11 +1,10 @@
 import hashlib
 from config import *
-import methods
+import favstofold
 import requests
 
 
-
-navidrome_salt = methods.get_random_string(5)
+navidrome_salt = favstofold.get_random_string(5)
 navidrome_password_salt = navidrome_password + navidrome_salt
 navidrome_token = hashlib.md5(navidrome_password_salt.encode()).hexdigest()
 
@@ -20,12 +19,12 @@ def prepare_base_uri():
 
 def prepare_call(endpoint):
     full_url = prepare_base_uri() + endpoint + '?' + navidrome_auth
-    # print(full_url)
     return full_url
 
 def call(endpoint, arguments=""):
     full_url = prepare_call(endpoint)
     r = requests.get(full_url+arguments)
+    # print(full_url+arguments)
     return r.text
 
 def ping():

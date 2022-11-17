@@ -1,0 +1,3 @@
+import navidrome
+
+navidrome.ping()
