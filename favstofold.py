@@ -47,6 +47,11 @@ def get_dest_single_track_folder():
 
     return full_path
 
+def get_dest_single_path(filename):
+    dest_folder = get_dest_single_track_folder()
+    dest_path = dest_folder+"/"+filename
+    return dest_path
+
 def get_dest_folder_path(track_path):
     path = '/'.join(get_dest_track_path(track_path).split('/')[0:-1])
     return path
@@ -56,10 +61,12 @@ def destination_exists(track_path):
         return True
     return False
 
-def destination_identical(track_path):
-    if(destination_exists(track_path)):
+def destination_identical(track_path, destination=False):
+    if destination == False:
+        destination = track_path
+    if(destination_exists(destination)):
         source_size = os.path.getsize(get_source_track_path(track_path))
-        dest_size = os.path.getsize(get_dest_track_path(track_path))
+        dest_size = os.path.getsize(get_dest_track_path(destination))
         if(source_size == dest_size):
             return True
 

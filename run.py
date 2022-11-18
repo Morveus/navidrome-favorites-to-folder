@@ -30,16 +30,16 @@ def process_track(track, single = False):
     track_artist = track.get('artist')
     track_album = track.get('album')
 
+    filename = os.path.split(track_path)[1]
+    splitext = os.path.splitext(track_path)
+    extension = splitext[1]
+
+    additional_info = "..."
+    if(single):
+        additional_info = " as a single track..."
+        filename = track_artist + " - " + track_album + " - " + track_title + extension
+
     if(not favstofold.destination_identical(track_path)):
-        filename = os.path.split(track_path)[1]
-        splitext = os.path.splitext(track_path)
-        extension = splitext[1]
-
-        additional_info = "..."
-        if(single):
-            additional_info = " as a single track..."
-            filename = track_artist + " - " + track_album + " - " + track_title + extension
-
         print("Copying " + track_artist + " - " + track_title + additional_info)
         favstofold.copy_track(track_path, single, filename)
 
@@ -52,8 +52,8 @@ print("Got the list.")
 # Let's process artists first
 print("Processing artists...")
 artists = starred_data.find_all('artist')
-# for artist in artists:
-#     process_artist(artist)
+for artist in artists:
+    process_artist(artist)
 print("Done with the artists.")
 
 
